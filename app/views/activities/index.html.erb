@@ -1,0 +1,31 @@
+<%= link_to 'New Activity', new_activity_path, class: "btn btn-primary" %>
+
+
+<h1 class="text-center my-5">Activities</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Duration</th>
+      <th colspan="2"> Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each_with_index do |activity, idx| %>
+      <tr>
+        <td scope="row"><%= idx + 1 %></td>
+        <td><%= activity.name %></td>
+        <td><%= activity.date %></td>
+        <td><%= activity.duration %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Show', activity_path(activity) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

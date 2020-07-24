@@ -1,0 +1,10 @@
+<% # /app/views/welcome/index.html.erb %>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">Yeay... bootstrap is working</p>
+</div>
+<%= fa_icon "baby", text: "BB", class: 'mx-2', size: '5x' %>
+<br />
+<i class="fab fa-facebook-f fa-3x mx-2"></i>
+<p><%= link_to 'Users:', edit_user_registration_path %> <%= User.count %> registered</p>
+

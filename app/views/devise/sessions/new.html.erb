@@ -1,0 +1,16 @@
+<h1 class="mb-5 text-center">Log in</h1>
+
+<div class="row justify-content-md-center"> 
+  <div class="col-md-6 col-md-offset-3">
+
+    <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.check_box :remember_me, class: 'my-3' %>
+      <%= f.submit "Log In", class: 'btn btn-primary my-3' %>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+ </div>
+</div>
