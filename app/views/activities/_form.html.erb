@@ -17,22 +17,26 @@
         <%= form.select :name,
         [["Running","Running"],["Weight","Weight"],["Walking","Walking"],["Swimming","Swimming"],
         ["Skiing","Skiing"],["Hiking","Hiking"],["Skating","Skating"],["Cycling","Cycling"],
-        ["Snowboarding","Snowboarding"],[" Wheel-Chair"," Wheel-Chair"]], {}, { class: "selectpicker" } %>
-        </div>
+        ["Snowboarding","Snowboarding"],["Weight-Lifting","Weight-Lifting"]], {}, { class: "selectpicker form-control mb-3" } %>
+      </div>
 
-      
-
-      <div class="field">
+      <div class="field my-3">
         <%= form.label :date %>
-        <%= form.date_select :date %>
+        <%= form.date_select :date, class: 'form-control' %>
       </div>
 
       <div class="field">
-        <%= form.label :duration %>
-        <%= form.number_field :duration %>
+        <label for="duration">Duration (in minutes)</label>
+        <%= form.number_field :duration, class: 'form-control' %>
       </div>
 
-      <div class="actions">
-        <%= form.submit "Add Activity", class: 'btn btn-primary my-3', data: { "disable-with": "Saving..." } %>
-      </div>
+      <% if current_page?(action: 'new') %>
+          <div class="actions">
+            <%= form.submit "Add Activity", class: 'btn btn-primary my-3', data: { "disable-with": "Saving..." } %>
+          </div>
+      <% else %>
+        <div class="actions">
+          <%= form.submit "Update Activity", class: 'btn btn-primary my-3', data: { "disable-with": "Saving..." } %>
+        </div>
+      <% end %>
     <% end %>

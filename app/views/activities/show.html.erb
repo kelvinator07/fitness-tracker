@@ -1,19 +1,22 @@
+<h1 class="mb-3">View Single Activity</h1>
+
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class="lead">
   <strong>Name:</strong>
   <%= @activity.name %>
 </p>
 
-<p>
+<p class="lead">
   <strong>Date:</strong>
   <%= @activity.date %>
 </p>
 
-<p>
+<p class="lead mb-3">
   <strong>Duration:</strong>
   <%= @activity.duration %>
+  <span> minutes</span>
 </p>
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Edit', edit_activity_path(@activity) %>  | 
 <%= link_to 'Back', activities_path %>

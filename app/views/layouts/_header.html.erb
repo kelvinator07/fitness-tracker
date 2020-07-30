@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary mb-3">
   <a class="navbar-brand" href="/">
-    <% # <img src="/docs/4.5/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> %>
     <i class="fab fa-facebook-f mx-2"></i>
     Move And Groove
   </a>
@@ -11,10 +10,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><%= fa_icon "home" %> Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/"><%= fa_icon "home" %> Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><%= fa_icon "home" %> Link</a>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/welcome/about"><%= fa_icon "info-circle" %> About </a>
       </li>
       
     </ul>
@@ -28,15 +28,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-text" href="#">
-                    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-text mr-3' %>
-                </a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-text" href="#">
-                    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-text mr-3' %>
-                </a>
+                <a class="nav-link" href="/edit"><%= fa_icon "user" %> Edit profile</a>
             </li>
 
             <li class="nav-item">
@@ -46,12 +38,12 @@
             </li>
         <% end %>
         <% if !user_signed_in? %>
-            <li class="nav-item"> <%= fa_icon "home" %>
+            <li class="nav-item"> <%= fa_icon('sign-out-alt') %>
                 <a class="nav-text" href="#">
                     <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-text mr-3'  %>
                 </a>
             </li>
-            <li class="nav-item"> <i class="fab fa-facebook-f">
+            <li class="nav-item"> <i class="fas fa-sign-in-alt" />
                 <a class="nav-text" href="#">
                     </i> <%= link_to "Login", new_user_session_path, :class => 'navbar-text mr-3'  %>
                 </a>
