@@ -16,9 +16,6 @@
 // }
 
 footer .container {
-    width: auto;
-    max-width: 680px;
-    padding: 0 15px;
   }
   
   .footer {
@@ -42,4 +39,8 @@ footer .container {
   .card:hover {
     background-color: cornflowerblue; 
     color: white;
+}
+
+.active, .a:hover, .nav-link:hover {
+  // background-color: red; 
 }

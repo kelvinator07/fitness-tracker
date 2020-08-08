@@ -1,13 +1,61 @@
 <div class="footer">
 
-  <footer class="mt-auto py-3 text-muted text-center text-small fixed-bottom">
-    <div class="container">
-        <p class="mb-1">&copy; <%= Time.now.year %> Designed and Developed by <a href="http://kelvinator07.github.io/" target="_blank">Geeky Kel</a></p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
+  <footer class="mt-auto text-center text-small fixed-bottom">
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">
+          Move And Groove
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/"><%= fa_icon "home" %> Home <span class="sr-only">(current)</span></a>
+            </li>
+      
+            <li class="nav-item">
+              <a class="nav-link" href="/welcome/about"><%= fa_icon "info-circle" %> About </a>
+            </li>
+            
+          </ul>
+          <ul class="navbar-nav ml-auto">
+      
+              <% if user_signed_in? %>
+                  <li class="nav-item">
+                      <a class="nav-text" href="#">
+                          <%= fa_icon "home" %> Logged in as <strong class="nav-text mr-3"><%= current_user.email %></strong>.
+                      </a>
+                  </li>
+      
+                  <li class="nav-item">
+                      <a class="nav-link" href="/edit"><%= fa_icon "user" %> Edit profile</a>
+                  </li>
+      
+                  <li class="nav-item">
+                      <a class="nav-text" href="#">
+                          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-text mr-3'  %>
+                      </a>
+                  </li>
+              <% end %>
+              <% if !user_signed_in? %>
+                  <li class="nav-item"> <%= fa_icon('sign-out-alt') %>
+                      <a class="nav-text" href="#">
+                          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-text mr-3'  %>
+                      </a>
+                  </li>
+                  <li class="nav-item"> <i class="fas fa-sign-in-alt" />
+                      <a class="nav-text" href="#">
+                          </i> <%= link_to "Login", new_user_session_path, :class => 'navbar-text mr-3'  %>
+                      </a>
+                  </li>
+              <% end %>
+          </ul>
+          
+        </div>
+      </nav>
     </div>
   </footer>
   
